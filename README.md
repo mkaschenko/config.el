@@ -1,1 +1,1 @@
-Add and/or remove commands to `config.el` and start emacs `emacs --load project-name/config.el .`
+Start emacs via `emacs --load project-name/config.el .`

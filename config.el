@@ -13,11 +13,11 @@
 
 ;;; Bitbucket
 
-(defun project-name/bitbucket-new-pull-request ()
+(defun mkaschenko/bitbucket-new-pull-request ()
   (interactive)
   (browse-url "https://bitbucket.org/project-name/pull-requests/new"))
 
-(defun project-name/bitbucket-show-commit ()
+(defun mkaschenko/bitbucket-show-commit ()
   (interactive)
   (let ((url (concat "https://bitbucket.org/project-name/commits/" (thing-at-point 'symbol))))
     (shell-command (concat "echo -n " url " | pbcopy"))
@@ -25,14 +25,14 @@
 
 ;;; Gitlab
 
-(defun project-name/gitlab-new-merge-request ()
+(defun mkaschenko/gitlab-new-merge-request ()
   (interactive)
   (browse-url (concat "https://gitlab.com/project-name/-/merge_requests/new?merge_request[source_branch]="
                       (shell-command-to-string "echo -n $(git branch --show-current)"))))
 
 ;;; Git
 
-(defun project-name/branch-name (name)
+(defun mkaschenko/branch-name (name)
   (interactive "sName: ")
   (kill-new
    (message
@@ -62,19 +62,19 @@
                       "cd ~/src/project-name/"
                       "./mkaschenko/bin/postgresql"))
 
-(defun project-name/rails-service ()
+(defun mkaschenko/rails-service ()
   (interactive)
   (mkaschenko/execute "*Rails service*"
                       "cd ~/src/project-name/"
                       "make s"))
 
-(defun project-name/redis-service ()
+(defun mkaschenko/redis-service ()
   (interactive)
   (mkaschenko/start-service "*Redis service*"
                             "cd ~/src/project-name"
                             "redis-server"))
 
-(defun project-name/sidekiq-service ()
+(defun mkaschenko/sidekiq-service ()
   (interactive)
   (mkaschenko/start-service "*Sidekiq service*"
                             "cd ~/src/project-name/"
@@ -90,7 +90,7 @@
 
 ;;; Daily report
 
-(defun project-name/daily-report ()
+(defun mkaschenko/daily-report ()
   (interactive)
   (switch-to-buffer "daily-report.txt")
   (beginning-of-buffer)
