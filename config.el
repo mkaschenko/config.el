@@ -6,10 +6,12 @@
       minitest-use-bundler nil
       minitest-use-rails t
 
+      rspec-autosave-buffer t
       rspec-command-options "--format progress"
       rspec-primary-source-dirs '("app")
       rspec-spec-command "mkaschenko/bin/test"
-      rspec-use-bundler-when-possible nil)
+      rspec-use-bundler-when-possible nil
+      rspec-use-spring-when-possible nil)
 
 ;;; Bitbucket
 
