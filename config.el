@@ -72,15 +72,15 @@
 
 (defun mkaschenko/redis-service ()
   (interactive)
-  (mkaschenko/start-service "*Redis service*"
-                            "cd ~/src/project-name"
-                            "redis-server"))
+  (mkaschenko/execute "*Redis service*"
+                      "cd ~/src/project-name"
+                      "redis-server"))
 
 (defun mkaschenko/sidekiq-service ()
   (interactive)
-  (mkaschenko/start-service "*Sidekiq service*"
-                            "cd ~/src/project-name/"
-                            "make sidekiq"))
+  (mkaschenko/execute "*Sidekiq service*"
+                      "cd ~/src/project-name/"
+                      "make sidekiq"))
 
 (defun mkaschenko/start-services ()
   (interactive)
